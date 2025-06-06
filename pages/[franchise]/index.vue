@@ -9,7 +9,7 @@ const franchise = computed(() => route.params.franchise);
 const characters = ref([]);
 
 try {
-  const response = await axios.get(`http://127.0.0.1:8000/api/characters/`, {
+  const response = await axios.get(`http://127.0.0.1:8000/api/character/`, {
     params: { 'anime__slug': franchise.value }, // Filter by anime slug
   });
   characters.value = response.data.results;
